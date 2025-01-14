@@ -1,0 +1,284 @@
+// Background Colors
+// Lavender Blue
+.bg-lavender-blue-100 {
+  background-color: $lavender-blue-100;
+}
+.bg-lavender-blue-200 {
+  background-color: $lavender-blue-200;
+}
+.bg-lavender-blue-300 {
+  background-color: $lavender-blue-300;
+}
+.bg-lavender-blue-400 {
+  background-color: $lavender-blue-400;
+}
+.bg-lavender-blue-500 {
+  background-color: $lavender-blue-500;
+}
+.bg-lavender-blue-600 {
+  background-color: $lavender-blue-600;
+}
+.bg-lavender-blue-700 {
+  background-color: $lavender-blue-700;
+}
+.bg-lavender-blue-800 {
+  background-color: $lavender-blue-800;
+}
+.bg-lavender-blue-900 {
+  background-color: $lavender-blue-900;
+}
+// Raspberry Red 100 - 900
+.bg-raspberry-red-100 {
+  background-color: $raspberry-red-100;
+}
+.bg-raspberry-red-200 {
+  background-color: $raspberry-red-200;
+}
+.bg-raspberry-red-300 {
+  background-color: $raspberry-red-300;
+}
+.bg-raspberry-red-400 {
+  background-color: $raspberry-red-400;
+}
+.bg-raspberry-red-500 {
+  background-color: $raspberry-red-500;
+}
+.bg-raspberry-red-600 {
+  background-color: $raspberry-red-600;
+}
+.bg-raspberry-red-700 {
+  background-color: $raspberry-red-700;
+}
+.bg-raspberry-red-800 {
+  background-color: $raspberry-red-800;
+}
+.bg-raspberry-red-900 {
+  background-color: $raspberry-red-900;
+}
+// Black Berry Yoghurt 100 - 900
+.bg-black-berry-yoghurt-100 {
+  background-color: $black-berry-yoghurt-100;
+}
+.bg-black-berry-yoghurt-200 {
+  background-color: $black-berry-yoghurt-200;
+}
+.bg-black-berry-yoghurt-300 {
+  background-color: $black-berry-yoghurt-300;
+}
+.bg-black-berry-yoghurt-400 {
+  background-color: $black-berry-yoghurt-400;
+}
+.bg-black-berry-yoghurt-500 {
+  background-color: $black-berry-yoghurt-500;
+}
+.bg-black-berry-yoghurt-600 {
+  background-color: $black-berry-yoghurt-600;
+}
+.bg-black-berry-yoghurt-700 {
+  background-color: $black-berry-yoghurt-700;
+}
+.bg-black-berry-yoghurt-800 {
+  background-color: $black-berry-yoghurt-800;
+}
+.bg-black-berry-yoghurt-900 {
+  background-color: $black-berry-yoghurt-900;
+}
+// Curry Yellow 100 - 900
+.bg-curry-yellow-100 {
+  background-color: $curry-yellow-100;
+}
+.bg-curry-yellow-200 {
+  background-color: $curry-yellow-200;
+}
+.bg-curry-yellow-300 {
+  background-color: $curry-yellow-300;
+}
+.bg-curry-yellow-400 {
+  background-color: $curry-yellow-400;
+}
+.bg-curry-yellow-500 {
+  background-color: $curry-yellow-500;
+}
+.bg-curry-yellow-600 {
+  background-color: $curry-yellow-600;
+}
+.bg-curry-yellow-700 {
+  background-color: $curry-yellow-700;
+}
+.bg-curry-yellow-800 {
+  background-color: $curry-yellow-800;
+}
+.bg-curry-yellow-900 {
+  background-color: $curry-yellow-900;
+}
+// Agave Green 100 - 900
+.bg-agave-green-100 {
+  background-color: $agave-green-100;
+}
+.bg-agave-green-200 {
+  background-color: $agave-green-200;
+}
+.bg-agave-green-300 {
+  background-color: $agave-green-300;
+}
+.bg-agave-green-400 {
+  background-color: $agave-green-400;
+}
+.bg-agave-green-500 {
+  background-color: $agave-green-500;
+}
+.bg-agave-green-600 {
+  background-color: $agave-green-600;
+}
+.bg-agave-green-700 {
+  background-color: $agave-green-700;
+}
+.bg-agave-green-800 {
+  background-color: $agave-green-800;
+}
+.bg-agave-green-900 {
+  background-color: $agave-green-900;
+}
+
+
+// Background Colors Hover
+// Lavender Blue
+.bg-hover-lavender-blue-100 {
+  &:hover { background-color: $lavender-blue-100;
+}}
+.bg-hover-lavender-blue-200 {
+  &:hover { background-color: $lavender-blue-200;
+}}
+.bg-hover-lavender-blue-300 {
+  &:hover { background-color: $lavender-blue-300;
+}}
+.bg-hover-lavender-blue-400 {
+  &:hover { background-color: $lavender-blue-400;
+}}
+.bg-hover-lavender-blue-500 {
+  &:hover { background-color: $lavender-blue-500;
+}}
+.bg-hover-lavender-blue-600 {
+  &:hover { background-color: $lavender-blue-600;
+}}
+.bg-hover-lavender-blue-700 {
+  &:hover { background-color: $lavender-blue-700;
+}}
+.bg-hover-lavender-blue-800 {
+  &:hover { background-color: $lavender-blue-800;
+}}
+.bg-hover-lavender-blue-900 {
+  &:hover { background-color: $lavender-blue-900;
+}}
+// Raspberry Red 100 - 900
+.bg-hover-raspberry-red-100 {
+  &:hover { background-color: $raspberry-red-100;
+}}
+.bg-hover-raspberry-red-200 {
+  &:hover { background-color: $raspberry-red-200;
+}}
+.bg-hover-raspberry-red-300 {
+  &:hover { background-color: $raspberry-red-300;
+}}
+.bg-hover-raspberry-red-400 {
+  &:hover { background-color: $raspberry-red-400;
+}}
+.bg-hover-raspberry-red-500 {
+  &:hover { background-color: $raspberry-red-500;
+}}
+.bg-hover-raspberry-red-600 {
+  &:hover { background-color: $raspberry-red-600;
+}}
+.bg-hover-raspberry-red-700 {
+  &:hover { background-color: $raspberry-red-700;
+}}
+.bg-hover-raspberry-red-800 {
+  &:hover { background-color: $raspberry-red-800;
+}}
+.bg-hover-raspberry-red-900 {
+  &:hover { background-color: $raspberry-red-900;
+}}
+// Black Berry Yoghurt 100 - 900
+.bg-hover-black-berry-yoghurt-100 {
+  &:hover { background-color: $black-berry-yoghurt-100;
+}}
+.bg-hover-black-berry-yoghurt-200 {
+  &:hover { background-color: $black-berry-yoghurt-200;
+}}
+.bg-hover-black-berry-yoghurt-300 {
+  &:hover { background-color: $black-berry-yoghurt-300;
+}}
+.bg-hover-black-berry-yoghurt-400 {
+  &:hover { background-color: $black-berry-yoghurt-400;
+}}
+.bg-hover-black-berry-yoghurt-500 {
+  &:hover { background-color: $black-berry-yoghurt-500;
+}}
+.bg-hover-black-berry-yoghurt-600 {
+  &:hover { background-color: $black-berry-yoghurt-600;
+}}
+.bg-hover-black-berry-yoghurt-700 {
+  &:hover { background-color: $black-berry-yoghurt-700;
+}}
+.bg-hover-black-berry-yoghurt-800 {
+  &:hover { background-color: $black-berry-yoghurt-800;
+}}
+.bg-hover-black-berry-yoghurt-900 {
+  &:hover { background-color: $black-berry-yoghurt-900;
+}}
+// Curry Yellow 100 - 900
+.bg-hover-curry-yellow-100 {
+  &:hover { background-color: $curry-yellow-100;
+}}
+.bg-hover-curry-yellow-200 {
+  &:hover { background-color: $curry-yellow-200;
+}}
+.bg-hover-curry-yellow-300 {
+  &:hover { background-color: $curry-yellow-300;
+}}
+.bg-hover-curry-yellow-400 {
+  &:hover { background-color: $curry-yellow-400;
+}}
+.bg-hover-curry-yellow-500 {
+  &:hover { background-color: $curry-yellow-500;
+}}
+.bg-hover-curry-yellow-600 {
+  &:hover { background-color: $curry-yellow-600;
+}}
+.bg-hover-curry-yellow-700 {
+  &:hover { background-color: $curry-yellow-700;
+}}
+.bg-hover-curry-yellow-800 {
+  &:hover { background-color: $curry-yellow-800;
+}}
+.bg-hover-curry-yellow-900 {
+  &:hover { background-color: $curry-yellow-900;
+}}
+// Agave Green 100 - 900
+.bg-hover-agave-green-100 {
+  &:hover { background-color: $agave-green-100;
+}}
+.bg-hover-agave-green-200 {
+  &:hover { background-color: $agave-green-200;
+}}
+.bg-hover-agave-green-300 {
+  &:hover { background-color: $agave-green-300;
+}}
+.bg-hover-agave-green-400 {
+  &:hover { background-color: $agave-green-400;
+}}
+.bg-hover-agave-green-500 {
+  &:hover { background-color: $agave-green-500;
+}}
+.bg-hover-agave-green-600 {
+  &:hover { background-color: $agave-green-600;
+}}
+.bg-hover-agave-green-700 {
+  &:hover { background-color: $agave-green-700;
+}}
+.bg-hover-agave-green-800 {
+  &:hover { background-color: $agave-green-800;
+}}
+.bg-hover-agave-green-900 {
+  &:hover { background-color: $agave-green-900;
+}}

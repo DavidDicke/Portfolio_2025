@@ -1,0 +1,93 @@
+<%# To render this card two attributes are needed:
+  # 1. carousel_id as a String two make the carousel unique and be able to control multiple carousels on one page
+  # 2. objects as an ClassInstance to be able to hand over the data from controller
+  %>
+<% if objects.length == 1 %>
+  <%= image_tag objects[0], class: "card-image" %>
+<% else %>
+  <div id="carouselPhotos<%=carousel_id%>" class="carousel slide">
+    <div class="carousel-inner" data-bs-toggle="modal" data-bs-target="#modal-carousel-<%=carousel_id%>">
+      <% objects.each_with_index do |object, index| %>
+        <% index == 0 ? attr = "active" : attr = "" %>
+        <div class="carousel-item <%= attr %>">
+          <%= image_tag object, class: "card-image" %>
+          <p> <%= object[/[^\/]+(?=\.)/] %></p>
+        </div>
+      <% end %>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos<%=carousel_id%>" data-bs-target="#carouselPhotos-modal<%=carousel_id%>" data-bs-slide="prev">
+      <div class="carousel-control-circle">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </div>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos<%=carousel_id%>" data-bs-target="#carouselPhotos-modal<%=carousel_id%>" data-bs-slide="next">
+      <div class="carousel-control-circle">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </div>
+    </button>
+    <div class="carousel-idicator-rel">
+      <div class="carousel-indicators">
+        <% objects.each_with_index do |object, index|  %>
+          <% if index == 0 %>
+            <button type="button" data-bs-target="#carouselPhotos<%=carousel_id%>Indicators" data-bs-slide-to="<%= index %>" class="active" aria-current="true" aria-label="Slide <%= index + 1%>"></button>
+          <% else %>
+            <button type="button" data-bs-target="#carouselPhotos<%=carousel_id%>Indicators" data-bs-slide-to="<%= index %>" aria-label="Slide <%= index + 1%>"></button>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <%# Modal opening on click to view the image in big %>
+
+  <!-- Modal -->
+  <div class="modal fade modal-carousel" id="modal-carousel-<%=carousel_id%>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h6>Screenshots <%= carousel_id.humanize %></h6>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div id="carouselPhotos-modal<%=carousel_id%>" class="carousel slide">
+            <div class="carousel-inner">
+              <% objects.each_with_index do |object, index| %>
+                <% index == 0 ? attr = "active" : attr = "" %>
+                <div class="carousel-item <%= attr %>">
+                  <%= image_tag object, class: "card-image" %>
+                  <p> <%= object[/[^\/]+(?=\.)/] %></p>
+                </div>
+              <% end %>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselPhotos-modal<%=carousel_id%>" data-bs-slide="prev">
+              <div class="carousel-control-circle">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </div>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselPhotos-modal<%=carousel_id%>" data-bs-slide="next">
+              <div class="carousel-control-circle">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </div>
+            </button>
+            <div class="carousel-idicator-rel">
+              <div class="carousel-indicators">
+                <% objects.each_with_index do |object, index|  %>
+                  <% if index == 0 %>
+                    <button type="button" data-bs-target="#carouselPhotos-modal<%=carousel_id%>Indicators" data-bs-slide-to="<%= index %>" class="active" aria-current="true" aria-label="Slide <%= index + 1%>"></button>
+                  <% else %>
+                    <button type="button" data-bs-target="#carouselPhotos-modal<%=carousel_id%>Indicators" data-bs-slide-to="<%= index %>" aria-label="Slide <%= index + 1%>"></button>
+                  <% end %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<% end %>

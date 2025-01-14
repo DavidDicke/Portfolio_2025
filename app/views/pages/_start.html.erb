@@ -1,0 +1,61 @@
+<div class="column column-start" data-navigation-target="start">
+  <div class="hero-section">
+    <%= render "navbar", link_left: "CV", link_right: "Portfolio" %>
+    <div class="title">
+      <div class="title-row-1">
+        <div class="title-text-1">
+          <h1>
+            Da-vid
+          </h1>
+        </div>
+        <div class="title-graphic title-start-video bg-blackberry-500">
+          <%# <%= image_tag "/images/Hi.gif", alt: "David greeting" %>
+          <%# <%= image_tag("hello.gif", alt: "David greeting") %>
+          <div class="play-btn-container animated-img" data-controller="pitch-video">
+            <%= render "video_modal", modal_id: "pitch-video", video_path: "Pitch_Video.mp4", video_poster: "Pitch_video_thumbnail.jpg" %>
+          </div>
+        </div>
+      </div>
+      <div class="title title-row-2">
+        <div class="title-text-2">
+          <h1>
+            Dicke
+          </h1>
+        </div>
+      </div>
+    </div>
+    <div class="intro">
+      <p>Hi and welcome to my portfolio. I’m a Junior Full Stack Developer with a background in architecture, design and marketing.
+I create web apps using Ruby on Rails, JavaScript, HTML, and CSS, currently working on my first React project.
+I love to solve problems with smooth user experiences and smooth backend code.
+My background brought my team design and project management insights, enabling visual coherence, task division, and team-focused code.
+As a passionate and ambitious learner I could enhance your team tomorrow.</p>
+    </div>
+    <div class="cta-links">
+      <div class="links-2">
+        <a href="https://github.com/daviddicke/" target="_blank" class="btn btn-sqr bg-lavender-blue-500 bg-hover-lavender-blue-300">
+          <%# Fontawesome Icon Github %>
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/daviddicke/" target="_blank" class="btn btn-sqr bg-lavender-blue-400 bg-hover-lavender-blue-200">
+          <%# Fontawesome Icon LinkedIn %>
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <%# Link vimeo %>
+        <a href="https://vimeo.com/daviddicke" target="_blank" class="btn btn-sqr bg-lavender-blue-300 bg-hover-lavender-blue-100">
+          <%# Fontawesome Icon Vimeo %>
+          <i class="fab fa-vimeo"></i>
+        </a>
+      </div>
+      <div class="links-1">
+        <a href="mailto:post@david-dicke.de" class="btn bg-black-berry-yoghurt-600">
+          Send a message
+        </a>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <%= link_to "Data Privacy", privacy_path %>
+    <%= link_to "Legal Notice", legal_notice_path %>
+  </div>
+</div>

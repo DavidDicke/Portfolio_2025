@@ -1,0 +1,49 @@
+<div class="column column-portfolio" data-navigation-target="portfolio">
+  <div class="hero-section">
+    <%= render "navbar", link_left: "Start", link_right: "CV" %>
+    <div class="graphic-arrow graphic-desktop">
+      <div class="portfolio-arrow-segment">
+        <div class="line-vertical"></div>
+        <div class="arrow-head-graphic arrow-portfolio arrow-down"></div>
+      </div>
+      <div class="portfolio-arrow-segment">
+        <div class="line-vertical"></div>
+        <div class="arrow-head-graphic arrow-portfolio arrow-down"></div>
+      </div>
+    </div>
+    <div class="title">
+      <div class="title-row-1">
+        <div class="title-text-1">
+          <h1>
+            Port<br>
+            folio
+          </h1>
+        </div>
+        <%# <div class="title-graphic title-icon-portfolio">
+          <%# Fontawesome icon graduation hat %>
+          <%# <%= image_tag "Portfolio-Fruit-Store-3.jpg" %>
+        <%# </div> %>
+      </div>
+      <%# <div class="title-row-2">
+        <div class="title-text-2">
+          <h1>
+            folio
+          </h1>
+        </div>
+      </div> %>
+    </div>
+    <div class="graphic-arrow graphic-mobile">
+      <div class="portfolio-arrow-segment">
+        <div class="line-vertical"></div>
+        <div class="arrow-head-graphic arrow-portfolio arrow-down"></div>
+      </div>
+      <div class="portfolio-arrow-segment">
+        <div class="line-vertical"></div>
+        <div class="arrow-head-graphic arrow-portfolio arrow-down"></div>
+      </div>
+    </div>
+  </div>
+  <div class="card-wrapper card-wrapper-portfolio">
+    <%= render "projects" %>
+  </div>
+</div>

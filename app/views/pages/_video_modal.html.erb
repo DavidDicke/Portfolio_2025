@@ -1,0 +1,18 @@
+<%# needs modal_id video_poster and video_path as arguments %>
+
+<%# fontawesom play button %>
+<i class="fas fa-play d-none"  data-bs-toggle="modal" data-bs-target="#<%= modal_id %>" data-action="click->pitch-video#startVideo"></i>
+
+<!-- Modal -->
+<div class="modal fade" id="<%= modal_id %>" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="btn-close" data-bs-dismiss="modal" data-action="click->pitch-video#stopVideo" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <%= video_tag("#{video_path}", poster: video_poster, controls: true) %>
+      </div>
+    </div>
+  </div>
+</div>

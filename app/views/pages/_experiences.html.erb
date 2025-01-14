@@ -1,0 +1,109 @@
+<%
+my_experiences = [{
+  type: "Professional Experience",
+  color: "lavender-blue-500",
+  fields: {
+    architect: {
+      stations: [{
+        organisation: "Homann Architects",
+        location: "Berlin, Germany",
+        start_date: Date.new(2022, 3, 1),
+        end_date: Date.new(2022, 5, 31),
+        description: "I was responsible for the design and project management of various projects in the field of architecture and interior design. I was able to give impulses to our developer team with project management and design. This enabled us to achieve visual coherence, practical division of tasks and team-oriented backend code."
+      },{
+        organisation: "Gölling Götzelmann Architekten",
+        location: "Berlin, Germany",
+        start_date: Date.new(2022, 6, 1),
+        end_date: Date.new(2024, 4, 30),
+        description: "I was responsible for the design and project management of various projects in the field of architecture and interior design. I was able to give impulses to our developer team with project management and design. This enabled us to achieve visual coherence, practical division of tasks and team-oriented backend code."
+      } ],
+      achievements: [
+        "Design, project management coordinating engineers, local authorities, clients, team members",
+        "Innovative sustainable apartments on a residual site led to planning permission"
+      ]
+    },
+    marketing_and_communications_manager: {
+      stations: [{
+        organisation: "EnerKíte",
+        location: "Berlin, Germany",
+        start_date: Date.new(2019, 12, 1),
+        end_date: Date.new(2021, 12, 31),
+        description: "I was responsible for the design and project management of various projects in the field of architecture and interior design. I was able to give impulses to our developer team with project management and design. This enabled us to achieve visual coherence, practical division of tasks and team-oriented backend code."
+      }],
+      achievements: [
+        "raised 1 mio € in crowdfunding campaign",
+        "Established regular Content Creation Workflow incl. writing, video production, newsletter, Social-Media",
+        "Public Relations and events planning (Trade Fair, Investor Day, Webinars)",
+        "helping executive team with website and brand relaunch"
+      ]
+    }
+  }
+},{
+  type: "Training and Education",
+  color: "raspberry-red-500",
+  fields: {
+    web_development: {
+      stations: [{
+        organisation: "Le Wagon",
+        location: "Berlin, Germany",
+        start_date: Date.new(2024, 5, 24),
+        end_date: Date.new(2024, 11, 23),
+        description: "I was responsible for the design and project management of various projects in the field of architecture and interior design. I was able to give impulses to our developer team with project management and design. This enabled us to achieve visual coherence, practical division of tasks and team-oriented backend code."
+      }],
+      achievements: [
+        "6 month part-time remote coding bootcamp",
+        "Worked in a group of 3 to design, develop and shipped Tons of Tones, a clone of AirBnB in 2 weeks and Charity Nest in 4 weeks both in part time framework",
+        "Learned Ruby, Ruby on Rails, JavaScript, HTML, CSS, PostgreSQL, Heroku, Git, Github, Figma"
+      ]
+    },
+    design: {
+      stations: [{
+        degree: "Master of Arts",
+        organisation: "Fachhochschule Potsdam",
+        location: "potsdam, Germany",
+        start_date: Date.new(2017, 10, 1),
+        end_date: Date.new(2020, 9, 30),
+        description: "I was responsible for the design and project management of various projects in the field of architecture and interior design. I was able to give impulses to our developer team with project management and design. This enabled us to achieve visual coherence, practical division of tasks and team-oriented backend code."
+      }],
+      achievements: [
+        "final grade: 1,3",
+        "Interface Design Track focused on Service Design",
+        "Projects in Human Computer Interaction, Typography, Motion Graphics, Physical Computing, Video Production, and more"
+
+      ]
+    },
+    economics: {
+      stations: [{
+        degree: "Bachelor of Science",
+        organisation: "Humboldt-Universität zu Berlin",
+        location: "Berlin, Germany",
+        start_date: Date.new(2014, 10, 1),
+        end_date: Date.new(2017, 9, 30),
+        description: "I was responsible for the design and project management of various projects in the field of architecture and interior design. I was able to give impulses to our developer team with project management and design. This enabled us to achieve visual coherence, practical division of tasks and team-oriented backend code."
+      }],
+      achievements: [
+        "final-grade: 1,8",
+        "Bachelor Thesis was a Microeconomic Analysis on sharing economy and housing markets (effects of peer-to-peer platform airbnb)",
+        "Lectures in Statistics, Econometrics, Information Systems, Game Theory, Entrepreneurship, Marketing and more"
+      ]
+    },
+    architecture: {
+      stations: [{
+        degree: "Bachelor of Arts",
+        organisation: "Fachhochschule Potsdam",
+        location: "Potsdam, Germany",
+        start_date: Date.new(2009, 10, 1),
+        end_date: Date.new(2014, 3, 31),
+        description: "I was responsible for the design and project management of various projects in the field of architecture and interior design. I was able to give impulses to our developer team with project management and design. This enabled us to achieve visual coherence, practical division of tasks and team-oriented backend code."
+      }],
+      achievements: [
+        "final grade: 1,9",
+        "Visual, Layout and 3D Design, Asses Client Needs, Develop & Present Designs",
+      ]
+    }
+  }
+}]
+%>
+<%my_experiences.each do |experience| %>
+  <%=    render "card_cv", experience: experience %>
+<% end %>

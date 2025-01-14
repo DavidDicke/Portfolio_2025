@@ -1,0 +1,41 @@
+.navbar-lewagon {
+  justify-content: space-between;
+  background: white;
+}
+
+.navbar-lewagon .navbar-collapse {
+  flex-grow: 0;
+}
+
+.navbar-lewagon .navbar-brand img {
+  width: 40px;
+}
+.navbar-home {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+
+.link-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h6 {
+    margin: 0;
+  }
+}
+.link-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  h6 {
+    margin: 0;
+  }
+}
+@media (min-width: 1401px) {
+  .navbar-home {
+    display: none;
+  }
+}

@@ -1,0 +1,36 @@
+<div class="column column-cv" data-navigation-target="cv">
+  <div class="hero-section">
+    <%= render "navbar", link_left: "Start", link_right: "Portfolio" %>
+    <div class="graphic-arrow graphic-desktop">
+      <%= render "line_curvy" %>
+      <div class="arrow-head-graphic arrow-cv arrow-down"></div>
+    </div>
+    <div class="title">
+      <div class="title title-row-1">
+        <div class="title-text-1">
+          <h1>
+            C<br>
+            V
+          </h1>
+        </div>
+        <%# <div class="title-graphic title-icon-cv">
+          <%= image_tag "CV-Road.jpg" %>
+        <%# </div> %>
+      </div>
+      <%# <div class="title title-row-2">
+        <div class="title-text-2">
+          <h1>
+            sume
+          </h1>
+        </div>
+      </div> %>
+    </div>
+    <div class="graphic-arrow graphic-mobile">
+      <%= render "line_curvy" %>
+      <div class="arrow-head-graphic arrow-cv arrow-down"></div>
+    </div>
+  </div>
+  <div class="card-wrapper card-wrapper-cv">
+    <%= render "experiences" %>
+  </div>
+</div>

@@ -1,0 +1,48 @@
+<%# arguments: experience as an object %>
+<% my_strftime = "%b %d, %Y" %>
+<div class="card card-cv">
+  <div class="experience-type">
+    <div class="experience-type-text-wrapper">
+      <h3 class="fc-<%= experience[:color] %>"><%= experience[:type] %></h3>
+    </div>
+    <div class="experience-type-icon-wrapper">
+      <div class="experience-type-icon bg-<%= experience[:color] %>">
+        <% if experience[:type] == "Professional Experience" %>
+          <%# fontawesome icon suitcase %>
+          <i class="fas fa-suitcase"></i>
+        <% elsif experience[:type] == "Training and Education" %>
+          <%# fontawesome icon graduation cap %>
+          <i class="fas fa-graduation-cap"></i>
+        <% end %>
+      </div>
+    </div>
+  </div>
+  <% experience[:fields].each do |fieldKey, fieldValue| %>
+    <div class="experienece" data-controller="collapse">
+      <div class="card-teaser">
+        <div class="card-teaser-text">
+            <h6><%= fieldKey.to_s.titleize %></h6>
+            <% fieldValue[:stations].each do |station| %>
+              <p class="station-title"><strong><%= "#{station[:degree]} at " if station[:degree] %><%= station[:organisation] %></strong></p>
+              <p><%= station[:start_date].strftime(my_strftime) %> - <%= station[:end_date].strftime(my_strftime) %></p>
+            <% end %>
+        </div>
+      </div>
+      <%= render "learn_more", color: experience[:color] %>
+      <div class="card-expanded" data-collapse-target="expanded">
+        <%= render "show_less", color: experience[:color] %>
+        <div class="project-details">
+          <% fieldValue[:achievements].each do |achievement| %>
+            <div class="experience">
+              <div class="textblock">
+                <div class="card-line bd-<%= experience[:color] %>"></div>
+                <p><%= achievement %></p>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <%= render "show_less", color: experience[:color] %>
+      </div>
+    </div>
+  <% end %>
+</div>

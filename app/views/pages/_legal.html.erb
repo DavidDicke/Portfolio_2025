@@ -1,0 +1,18 @@
+<%# two Arguments needed: title as a string and content as a partial-name %>
+<% content_for :meta_title, "David Dicke - #{ title }" %>
+<div class="legal-container">
+  <%# link to homepage %>
+  <div class="legal-title-row">
+    <div class="nav-back-wrapper">
+      <%= link_to root_path do %>
+        <div class="nav-back-circle">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </div>
+      <% end %>
+    </div>
+    <h1 class="legal-title"><%= title %></h1>
+  </div>
+  <div class="legal-content">
+    <%= render content %>
+  </div>
+</div>

@@ -1,0 +1,62 @@
+<%
+my_projects = [
+  {
+    title: "CharityNest",
+    color: "agave-green-500",
+    subtitle: "Le Wagon Bootcamp Final Project",
+    intro: "Web app for young professionals to donate to curated and evaluated charity organisations, track impact and engage in discussions ",
+    hero_image: "CharityNest/Mockup_Macbook_Dashboard.png",
+    start_date: Date.new(2024, 10, 24),
+    end_date: Date.new(2024, 11, 23),
+    tech_stack: ["Ruby on Rails", "HTML", "CSS", "JavaScript", "PostgreSQL", "ActionCable", "Heroku", "Redis", "Stripe API", "OpenAi API", "Mapbox API"],
+    user_flows: ["Discovering trustworthy charity organisations",
+                  "Comparing impact of charity projects",
+                  "Donating to a charity project",
+                  "Receiving report updates by the organisation and quaterly external evaluation reports",
+                  "Engaging in discussions with other users and organisations"],
+    key_challenges: ["Our first key challenge as a team was designing user flows and the frontend with a 'desktop-first' approach for facilitating donations to impactful charity projectsthe without a precise design or business model reference.", "While we worked with a basic UI kit in figma and some wire-frames in the first team project, now each team member was asked to start with one high fidelity prototype for his main page in figma. Initially, this felt like unneccesarily doubling the efforts, but after struggling to code my second page without a high fidelity prototype, me and my team were reassured it actually saves time. With a Figma prototype for my third side, my team and I could easily split the work on individual components, streamlining development",  "After the final pitch and the end of the bootcamp we continued to work on the app to make it responsive. This process taught us efficient strategies and reinforced why it's essential to consider responsiveness from the start.", "Having learned about Websockets and ActionCable during the final project, I implemented notifications about new reports or comments on the user's discusssions for the final pitch. An additional challenge was to go beyond the lecture content and implement the functionality on Heroku with Redis Cloud."],
+    potential_improvements: ["Optimzing the exploration process with filters and more sorting options", "Integrating video updates to help users track charity projects in a more engaging way", "Enable a peer-to-peer review system, where benefiacaries of charity projects can comment on the impact of the projects."],
+    images: ["CharityNest/Homepage.png", "CharityNest/Climate Change Charity Organisations.png", "CharityNest/Charity Organisation Projects.png", "CharityNest/Charity Project with Donation Modal.png", "CharityNest/Dashboard with AI Chatbot open.png"],
+    video_path: "CharityNest Demo Day Pitch.mp4",
+    video_thumbnail: "CharityNest Thumbnail.png",
+    video_title: "Demo Day Pitch Video",
+    youtube_video_id: "HmYnWIBi6nU",
+    youtube_start_time: 6525,
+    github_link: "https://github.com/p-guelfi/CharityNest",
+    live_link: "http://charity-nest.com",
+  },
+  {
+    title: "Tons of Tones",
+    color: "black-berry-yoghurt-800",
+    subtitle: "Le Wagon Bootcamp Airbnb Clone Project",
+    intro: "Airbnb for instruments. A web app that lets musicians rent out and borrow instruments from each other with confidence.",
+    hero_image: "Tons of Tones/Hero Image.png",
+    start_date: Date.new(2024, 10, 7),
+    end_date: Date.new(2024, 10, 23),
+    tech_stack: ["Ruby on Rails", "HTML", "CSS", "JavaScript", "FlatpickrJS", "PostgreSQL", "Heroku", "Mapbox API", ],
+    user_flows: ["Discovering instruments on loan near by",
+                  "Booking an instrument for some days",
+                  "Exchanging instruments and money after approval of owner",
+                  "Reviewing a transaction",
+                  "Creating an listing to rent out an instrument",
+                  "Approving a request"],
+    key_challenges: [
+      "Our first app project and team collaboration posed the challenge of establishing a smooth workflow with GitHub. We achieved this through regular pull requests, detailed code reviews, communication via Slack, and daily stand-up video calls.",
+      "As a team, we learned continuous deployment on Heroku, tackling basic deployment errors and integrating the MapBox API.",
+      "In the booking process, I addressed the challenge of handling blocked dates and preventing double bookings using FlatpickrJS.",
+      "For the pitch presentation, we aimed to showcase real-time notifications for booking approvals and reviews. As we had not learned about Web Sockets and Action Cable yet, I created a functional workaround using a JavaScript fetch loop."],
+    potential_improvements: ["Filtering and sorting options on the index page (e.g. by ratings, users or location).", "Adding a map view to the index page to explore instruments nearby", "Ceating Favourites to rent later", "Offer an online payment process", "A chat function between owner and renter", "Adding videos to showcase  the sound of the instruments before booking"],
+    images: ["Tons of Tones/User Flow - Booking an Instrument.png", "Tons of Tones/User Flow - Renting Out an Instrument.png"],
+    video_path: "",
+    video_thumbnail: "",
+    video_title: "",
+    youtube_video_id: "HmYnWIBi6nU",
+    youtube_start_time: 6525,
+    github_link: "https://github.com/p-guelfi/tons-of-tones",
+    live_link: "https://tons-of-tones-64fd5213e3fb.herokuapp.com/instruments",
+  }
+]
+%>
+<%my_projects.each do |project| %>
+  <%=    render "card_portfolio", project: project %>
+<% end %>

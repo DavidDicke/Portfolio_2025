@@ -1,0 +1,96 @@
+<% my_strftime = "%b %d, %Y" %>
+<div class="card card-portfolio" data-controller="collapse">
+  <div class="card-teaser">
+    <div class="card-teaser-image">
+      <%= image_tag project[:hero_image] %>
+    </div>
+    <div class="card-teaser-text">
+      <h3 class="fc-<%= project[:color] %>"><%= project[:title] %></h3>
+      <p><strong><%= project[:subtitle] %></strong></p>
+      <p><%= project[:start_date].strftime(my_strftime) %> - <%= project[:end_date].strftime(my_strftime) %></p>
+      <div class="textblock">
+        <div class="card-line bd-<%= project[:color]%>"></div>
+        <p><%= project[:intro] %></p>
+      </div>
+    </div>
+  </div>
+  <%= render "learn_more", color: project[:color] %>
+  <div class="card-expanded" data-collapse-target="expanded">
+    <%= render "show_less", color: project[:color] %>
+    <% if project[:video_path] != "" %>
+      <div class="project-video">
+        <h6><%= project[:video_title] %></h6>
+        <div><%= video_tag project[:video_path], controls: true, poster: project[:video_thumbnail] %></div>
+      </div>
+    <% elsif project[:youtube_video_id] != "" %>
+      <div class="project-video">
+        <h6><%= project[:video_title] %></h6>
+        <!-- <iframe src="https://www.youtube-nocookie.com/embed/<%= project[:youtube_video_id] %>?si=3x32f8uVlIPGCXqJ&amp;start=<%= project[:youtube_start_time]%>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe> %>-->
+      </div>
+    <% end %>
+    <div class="project-details">
+      <div class="project-details-tech-stack">
+        <h6>Tech Stack</h6>
+        <div class="textblock">
+          <div class="card-line bd-<%= project[:color]%>"></div>
+          <p>
+            <%= project[:tech_stack].to_s.gsub(/[\[\]"]/, '') %>
+          </p>
+        </div>
+      </div>
+      <div class="project-details-main-user-flow">
+        <h6>User Flows</h6>
+        <% project[:user_flows].each do |user_flow| %>
+          <div class="textblock">
+            <div class="card-line bd-<%= project[:color]%>"></div>
+            <p><%= user_flow %></p>
+          </div>
+        <% end %>
+      </div>
+      <% if project[:images].any? %>
+        <div class="project-details-images">
+          <h6>Screenshots</h6>
+          <div class="project-details-images-container">
+            <%= render "carousel", carousel_id: project[:title].gsub(" ", "_"), objects: project[:images] %>
+          </div>
+        </div>
+      <% end %>
+      <div class="project-details-key-challenges">
+        <h6>Key Challenges</h6>
+        <% project[:key_challenges].each do |challenge| %>
+          <div class="textblock">
+            <div class="card-line bd-<%= project[:color]%>"></div>
+            <p><%= challenge %></p>
+          </div>
+        <% end %>
+      </div>
+      <div class="project-details-potential-improvements">
+        <h6>Potential Improvements</h6>
+        <% project[:potential_improvements].each do |improvement| %>
+        <div class="textblock">
+          <div class="card-line bd-<%= project[:color]%>"></div>
+          <p><%= improvement %></p>
+        </div>
+        <% end %>
+      </div>
+    </div>
+    <%= render "show_less", color: project[:color] %>
+  </div>
+  <div class="card-links">
+    <% if project[:github_link] != "" %>
+    <div class="card-links-github">
+      <a href="<%= project[:github_link] %>" target="_blank" class="btn btn-sqr bg-lavender-blue-500 bg-hover-lavender-blue-200">
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <% end %>
+    <% if project[:live_link] != "" %>
+    <div class="card-links-live">
+      <a href="<%= project[:live_link] %>" target="_blank" class="btn btn-sqr bg-black-berry-yoghurt-600 bg-hover-black-berry-yoghurt-300">
+        <%# fontawesome web globe icon %>
+        <i class="fas fa-globe"></i>
+      </a>
+    </div>
+    <% end %>
+  </div>
+</div>
