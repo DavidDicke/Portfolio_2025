@@ -1,13 +1,19 @@
 .main-grid {
   display: grid;
-  grid-template-columns: repeat(3, 26.55rem);
+  grid-template-columns: repeat(3, 26rem);
   grid-gap: 1rem;
-  max-width: 1300px;
+  max-width: 80rem;
   margin: 0 auto;
   height: 100dvh;
 }
 @media (max-width: 1400px) {
   .main-grid {
     grid-template-columns: 1fr;
+  }
+}
+@media (min-width: 3000px) {
+  .main-grid {
+    grid-template-columns: 26rem 26rem 52rem;
+    max-width: 104rem;
   }
 }

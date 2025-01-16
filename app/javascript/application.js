@@ -6,9 +6,14 @@ import "bootstrap"
 
 // Responsiveness
 
-
+const heroSectionExpandsVH = () => {
+  const hero = document.querySelector('.intro').parentNode;
+  console.log(hero.scrollHeight, hero.clientHeight);
+  return hero.scrollHeight > hero.clientHeight;
+}
 
 const responsiveness = () => {
+  console.log("checking for responsiveness");
   if (window.innerWidth < 1400 && window.innerHeight > window.innerWidth) {
     // Remove the bootstrap modal toggle attribute
     document.querySelectorAll('.carousel-inner').forEach((element) => {
@@ -20,7 +25,8 @@ const responsiveness = () => {
       element.setAttribute('data-bs-toggle', 'modal');
     });
   }
-  if (window.innerHeight < 700) {
+  // If the screen is too small, move the cta-links to the top of the hero-section
+  if (heroSectionExpandsVH()) {
     // Put cta-links on top of intro text and make hero-section height 100%
     const cta = document.querySelector('.cta-links');
     const intro = document.querySelector('.intro');
@@ -35,13 +41,18 @@ const responsiveness = () => {
     const hero = document.querySelector('.intro').parentNode;
     document.querySelector('.cta-links').remove();
     hero.appendChild(cta);
-    hero.style.height = '100vh';
+    hero.style.removeProperty('height');
   }
 };
+
+window.addEventListener('load', () => {
+  responsiveness();
+});
 
 window.addEventListener('resize', () => {
   responsiveness();
 });
-ScreenOrientation.addEventListener('change', () => {
+// Listen for orientation changes
+screen.orientation.addEventListener('change', () => {
   responsiveness();
 });
