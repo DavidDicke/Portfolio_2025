@@ -8,15 +8,13 @@
             Da-vid
           </h1>
         </div>
-        <div class="title-graphic title-start-video bg-blackberry-500">
-          <%# <%= image_tag "/images/Hi.gif", alt: "David greeting" %>
-          <%# <%= image_tag("hello.gif", alt: "David greeting") %>
-          <div class="play-btn-container animated-img" data-controller="pitch-video">
+        <div class="title-graphic title-start-video">
+          <div class="play-btn-container animated-greeting-img" data-controller="pitch-video">
             <%= render "video_modal", modal_id: "pitch-video", video_path: "Pitch_Video.mp4", video_poster: "Pitch_video_thumbnail.jpg" %>
           </div>
         </div>
       </div>
-      <div class="title title-row-2">
+      <div class="title-row-2">
         <div class="title-text-2">
           <h1>
             Dicke
@@ -25,46 +23,55 @@
       </div>
     </div>
     <div class="intro">
-        <div>
-          <h5>Welcome to my portfolio.</h5>
-          <span class="paragraph-desktop">I’m a Junior Full Stack Developer with a background in architecture, design and marketing.</span>
-        </div>
-        <div>
-          <span class="subtitle-desktop">My Tech Stack </span>
-          <span class="paragraph-desktop">I create web apps using Ruby on Rails, JavaScript, HTML, and CSS, currently working on my first React project.</span>
-        </div>
-        <div>
-          <span class="subtitle-desktop">My Passion </span>
-          <span class="paragraph-desktop">I love to solve problems with smooth user experiences and smooth backend code.</span>
-        </div>
-        <div>
-          <span class="paragraph-desktop"><span class="subtitle-desktop">My Transferable Skills </span>I apply previous experiences in design and project management to achieve visually coherent apps and efficient team collaboration.</span>
-        </div>
-        <div>
-          <span class="subtitle-desktop">My Offer </span>
-          <span class="paragraph-desktop">As a passionate and ambitious learner I could enhance your team tomorrow.</span>
-        </div>
+      <div>
+        <h5>Welcome to my portfolio.</h5>
+        <p class="paragraph-desktop">I’m a Junior Full Stack Developer with a background in architecture, design and marketing.</p>
+      </div>
+      <div>
+        <p class="subtitle-desktop">My Tech Stack </p>
+        <p class="paragraph-desktop">I create web apps using Ruby on Rails, JavaScript, HTML, and CSS, currently working on my first React project.</p>
+      </div>
+      <div>
+        <p class="subtitle-desktop">My Passion </p>
+        <p class="paragraph-desktop">I love to solve problems with smooth user experiences and smooth backend code.</p>
+      </div>
+      <div>
+        <p class="subtitle-desktop">My Transferable Skills</p>
+        <p class="paragraph-desktop">I apply previous experiences in design and project management to achieve visually coherent apps and efficient team collaboration.</p>
+      </div>
+      <div>
+        <p class="subtitle-desktop">My Offer </p>
+        <p class="paragraph-desktop">As a passionate and ambitious learner I could enhance your team tomorrow.</p>
+      </div>
     </div>
     <div class="cta-links">
       <div class="links-2">
         <a href="https://github.com/daviddicke/" target="_blank" class="btn btn-sqr bg-lavender-blue-500 bg-hover-lavender-blue-300">
           <%# Fontawesome Icon Github %>
           <i class="fab fa-github"></i>
+          <span class="for-print">github.com/daviddicke</span>
         </a>
         <a href="https://www.linkedin.com/in/daviddicke/" target="_blank" class="btn btn-sqr bg-lavender-blue-400 bg-hover-lavender-blue-200">
           <%# Fontawesome Icon LinkedIn %>
           <i class="fab fa-linkedin"></i>
+          <span class="for-print">linkedin.com/in/daviddicke</span>
         </a>
         <%# Link vimeo %>
         <a href="https://vimeo.com/daviddicke" target="_blank" class="btn btn-sqr bg-lavender-blue-300 bg-hover-lavender-blue-100">
           <%# Fontawesome Icon Vimeo %>
           <i class="fab fa-vimeo"></i>
+          <span class="for-print">vimeo.com/daviddicke</span>
         </a>
       </div>
       <div class="links-1">
         <a href="mailto:post@david-dicke.de" class="btn bg-black-berry-yoghurt-600">
-          Send a message
+          <span class="for-web">Send a mail</span>
+          <span class="for-print">post@david-dicke.de</span>
         </a>
+        <a href="https://david-dicke.de" class="btn for-print">
+          <span>Portfolio: david-dicke.de</span></a>
+        <p class="for-print" id="tel-no"> 71 01 </p>
+        <p class="for-print">Berlin, Germany</p>
       </div>
     </div>
   </div>
