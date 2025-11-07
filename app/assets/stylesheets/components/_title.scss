@@ -52,12 +52,14 @@
     animation-iteration-count: infinite;
     cursor: pointer;
   }
-  .animated-img {
+  .animated-greeting-img {
     background-image: asset-url('hello.gif');
   }
-  .static-img {
-    // background-image: asset-url('25_01_02_Profile.jpg');
+  .animated-talking-img {
     background-image: asset-url('talking.gif');
+  }
+  .static-img {
+    background-image: asset-url('25_01_02_Profile.jpg');
   }
 }
 .play-btn-container {

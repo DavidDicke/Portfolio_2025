@@ -8,12 +8,24 @@ import "bootstrap"
 
 const heroSectionExpandsVH = () => {
   const hero = document.querySelector('.intro').parentNode;
-  console.log(hero.scrollHeight, hero.clientHeight);
   return hero.scrollHeight > hero.clientHeight;
 }
 
+const moveLinks = (where) => {
+  const cta = document.querySelector('.cta-links');
+  const intro = document.querySelector('.intro');
+  const hero = document.querySelector('.intro').parentNode;
+  document.querySelector('.cta-links').remove();
+  if (where === 'beforeIntro') {
+    hero.insertBefore(cta, intro);
+  } else if (where === 'afterIntro') {
+    hero.appendChild(cta);
+  }
+  return hero;
+};
+
+
 const responsiveness = () => {
-  console.log("checking for responsiveness");
   if (window.innerWidth < 1400 && window.innerHeight > window.innerWidth) {
     // Remove the bootstrap modal toggle attribute
     document.querySelectorAll('.carousel-inner').forEach((element) => {
@@ -28,20 +40,10 @@ const responsiveness = () => {
   // If the screen is too small, move the cta-links to the top of the hero-section
   if (heroSectionExpandsVH()) {
     // Put cta-links on top of intro text and make hero-section height 100%
-    const cta = document.querySelector('.cta-links');
-    const intro = document.querySelector('.intro');
-    const hero = document.querySelector('.intro').parentNode;
-    document.querySelector('.cta-links').remove();
-    hero.insertBefore(cta, intro);
-    hero.style.height = 'fit-content';
+    moveLinks('beforeIntro').style.height = 'fit-content';
   } else {
     // Put cta-links below intro text and make hero-section height 100vh
-    const cta = document.querySelector('.cta-links');
-    const intro = document.querySelector('.intro');
-    const hero = document.querySelector('.intro').parentNode;
-    document.querySelector('.cta-links').remove();
-    hero.appendChild(cta);
-    hero.style.removeProperty('height');
+    moveLinks('afterIntro').style.removeProperty('height');
   }
 };
 
@@ -56,3 +58,30 @@ window.addEventListener('resize', () => {
 screen.orientation.addEventListener('change', () => {
   responsiveness();
 });
+
+// Rearraange DOM for Print
+window.addEventListener("beforeprint", () => {
+  // const head = document.createElement('div');
+  // head.classList.add('print-head');
+  // const start = document.querySelector('.column-start');
+  // const title = start.querySelector('.title').cloneNode(true);
+  // const links = start.querySelector('.cta-links').cloneNode(true);
+  // start.querySelector('.title').remove();
+  // start.querySelector('.cta-links').remove();
+  // head.appendChild(title);
+  // head.appendChild(links);
+  // start.querySelector('.hero-section').insertBefore(head, document.querySelector('.intro'));
+
+
+});
+
+// Rearraange DOM for Screen again
+// window.addEventListener("afterprint", () => {
+//   const title = document.querySelector('.title');
+//   const links = document.querySelector('.cta-links');
+//   document.querySelector('.print-head').remove();
+//   const start = document.querySelector('.column-start');
+//   start.querySelector('.hero-section').insertBefore(title, document.querySelector('.intro'));
+//   start.querySelector('.hero-section').appendChild(links);
+//   responsiveness();
+// });
