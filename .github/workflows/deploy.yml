@@ -27,6 +27,7 @@ jobs:
         with:
           ruby-version: ruby-3.3.5
           bundler-cache: true # Automatically runs 'bundle install' and caches gems
+          bundler: latest
 
       - name: Precompile Rails assets
         run: bundle exec rails assets:precompile
