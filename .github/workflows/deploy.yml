@@ -36,11 +36,15 @@ jobs:
       - name: Scrape site with wget
         run: wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://localhost:3000
 
-      - name: Upload to Strato via SFTP
-        uses: larytet/sftp-action@v1.0
+      - name: Sync files to Strato via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          host: ${{ secrets.SFTP_HOST }}
+          server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
           password: ${{ secrets.SFTP_PASSWORD }}
-          local_path: ./localhost:3000/ # wget creates a directory named after the host and port
-          remote_path: ${{ secrets.REMOTE_PATH }}
+          protocol: sftp # Specify SFTP protocol
+          local-dir: ./localhost:3000/ # The directory created by wget
+          remote-dir: ${{ secrets.REMOTE_PATH }}
+          # This option deletes files on the server that are not in the local-dir
+          # ensuring a clean mirror of your site.
+          dangerous-clean-slate: true
