@@ -73,6 +73,17 @@
         </div>
         <% end %>
       </div>
+      <% if project[:post_bootcamp_improvements] %>
+      <div class="project-details-post-bootcamp-improvements">
+        <h6>Post Bootcamp Improvements</h6>
+        <% project[:post_bootcamp_improvements].each do |improvement| %>
+        <div class="textblock">
+          <div class="card-line bd-<%= project[:color]%>"></div>
+          <p><%= improvement %></p>
+        </div>
+        <% end %>
+      </div>
+      <% end %>
     </div>
     <%= render "show_less", color: project[:color] %>
   </div>
