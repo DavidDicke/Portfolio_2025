@@ -1,0 +1,50 @@
+name: Build and Deploy Rails Static Site
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  build-and-deploy:
+    name: Build, Scrape, and Deploy
+    runs-on: ubuntu-latest
+    # Set environment variables for all steps
+    env:
+      RAILS_ENV: production
+      SECRET_KEY_BASE: "dummy_secret_key_for_assets_precompile"
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ruby-3.1.2 # Change this to your project's Ruby version
+          bundler-cache: true # Automatically runs 'bundle install' and caches gems
+
+      - name: Precompile Rails assets
+        run: bundle exec rails assets:precompile
+
+      - name: Start Rails server
+        run: bundle exec rails server -e production &
+
+      - name: Wait for server to start
+        run: sleep 5 # Give the server a few seconds to boot up
+
+      - name: Scrape site with wget
+        run: wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://localhost:3000
+
+      - name: Sync files to Strato via SFTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        with:
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{ secrets.SFTP_PASSWORD }}
+          protocol: sftp # Specify SFTP protocol
+          local-dir: ./localhost:3000/ # The directory created by wget
+          remote-dir: ${{ secrets.REMOTE_PATH }}
+          # This option deletes files on the server that are not in the local-dir
+          # ensuring a clean mirror of your site.
+          dangerous-clean-slate: true
