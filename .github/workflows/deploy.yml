@@ -18,6 +18,10 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      # Add this new step for debugging
+      - name: List files in workspace
+        run: ls -la
+
       - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
