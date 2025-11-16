@@ -53,3 +53,5 @@ jobs:
           # This option deletes files on the server that are not in the local-dir
           # ensuring a clean mirror of your site.
           dangerous-clean-slate: true
+          exclude: |
+            /app/assets/videos/*.mp4

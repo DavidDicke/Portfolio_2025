@@ -29,10 +29,10 @@
 !/tmp/storage/
 !/tmp/storage/.keep
 
-/public/assets
+# /public/assets
 
-# Ignore videos
-/app/assets/videos/*
+# Ignore videos in github because of size limit of 100 MB
+/app/assets/videos/*.mp4
 
 # Ignore master key for decrypting credentials and more.
 /config/master.key
