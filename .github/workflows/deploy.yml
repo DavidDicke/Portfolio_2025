@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     # Set environment variables for all steps
     env:
-      RAILS_ENV: production
+      RAILS_ENV: development
       SECRET_KEY_BASE: "dummy_secret_key_for_assets_precompile"
 
     steps:
@@ -39,7 +39,7 @@ jobs:
         run: sleep 5 # Give the server a few seconds to boot up
 
       - name: Scrape site with wget
-        run: wget --mirror --convert-links --adjust-extension --page-requisites --no-parent http://localhost:3000
+        run: wget --mirror --convert-links --max-redirect=0 --adjust-extension --page-requisites --no-parent http://localhost:3000
 
       - name: Sync files to Strato via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
