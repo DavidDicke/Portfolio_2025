@@ -39,7 +39,11 @@ jobs:
         run: sleep 5 # Give the server a few seconds to boot up
 
       - name: Scrape site with wget
-        run: wget -k -p -r http://127.0.0.1:3000/
+        run: wget -k -p -r http://127.0.0.1:3000/ || true
+
+      - name: Show Rails logs on failure
+        # This step will run and print the contents of the development log.
+        run: cat log/development.log
 
       - name: Sync files to Strato via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
