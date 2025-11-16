@@ -39,7 +39,7 @@ jobs:
         run: sleep 5 # Give the server a few seconds to boot up
 
       - name: Scrape site with wget
-        run: wget --mirror --convert-links --max-redirect=0 --adjust-extension --page-requisites --no-parent http://localhost:3000
+        run: wget -k -p -r http://127.0.0.1:3000/
 
       - name: Sync files to Strato via SFTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
