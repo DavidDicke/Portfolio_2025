@@ -70,7 +70,7 @@ jobs:
         run: cat log/development.log
 
       - name: Sync files to Strato via SFTP
-        uses: easingthemes/sftp-deploy@v3.3.0
+        uses: easingthemes/sftp-deploy@main
         with:
           # Required
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
