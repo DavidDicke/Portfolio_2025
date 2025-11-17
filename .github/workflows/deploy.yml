@@ -10,9 +10,29 @@ jobs:
     name: Build, Scrape, and Deploy
     runs-on: ubuntu-latest
     # Set environment variables for all steps
+    services:
+      postgres:
+        image: postgres:16 # Use a specific version of Postgres
+        env:
+          POSTGRES_USER: rails
+          POSTGRES_PASSWORD: password
+          POSTGRES_DB: test_db
+        ports:
+          - 5432:5432
+        # Add a health check to wait for Postgres to be ready
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
     env:
       RAILS_ENV: development
       SECRET_KEY_BASE: "dummy_secret_key_for_assets_precompile"
+      DB_HOST: localhost
+      DB_USER: rails
+      DB_PASSWORD: password
+      DB_NAME: test_db
 
     steps:
       - name: Checkout code
