@@ -48,6 +48,10 @@ jobs:
           ruby-version: ruby-3.3.5
           bundler-cache: true # Automatically runs 'bundle install' and caches gems
           bundler: latest
+      - name: Create and migrate database
+        run: |
+          bundle exec rails db:create
+          bundle exec rails db:schema:load
 
       - name: Precompile Rails assets
         run: bundle exec rails assets:precompile
@@ -66,16 +70,14 @@ jobs:
         run: cat log/development.log
 
       - name: Sync files to Strato via SFTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+        uses: easingthemes/sftp-deploy@v3.3.0
         with:
-          server: ${{ secrets.SFTP_HOST }}
-          username: ${{ secrets.SFTP_USER }}
-          password: ${{ secrets.SFTP_PASSWORD }}
-          protocol: sftp # Specify SFTP protocol
-          local-dir: ./localhost:3000/ # The directory created by wget
-          remote-dir: ${{ secrets.REMOTE_PATH }}
-          # This option deletes files on the server that are not in the local-dir
-          # ensuring a clean mirror of your site.
-          dangerous-clean-slate: true
-          exclude: |
-            /app/assets/videos/*.mp4
+          # Required
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          REMOTE_HOST: ${{ secrets.SFTP_HOST }}
+          SOURCE: './localhost:3000/*' # The '*' ensures only the contents are uploaded
+          TARGET:  ${{ secrets.REMOTE_PATH }}
+          ARGS: '-rlgoDzvc -i --delete'
+          # Optional: This is the equivalent of 'dangerous-clean-slate'
+          delete_all_first: true
+          EXCLUDE: "/app/assets/videos/*.mp4"
