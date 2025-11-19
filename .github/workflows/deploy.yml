@@ -79,5 +79,4 @@ jobs:
           TARGET:  ${{ secrets.REMOTE_PATH }}
           ARGS: '-rlgoDzvc -i --delete'
           # Optional: This is the equivalent of 'dangerous-clean-slate'
-          delete_all_first: true
-          EXCLUDE: "/app/assets/videos/*.mp4"
+          EXCLUDE: "/assets/**/*.mp4"
