@@ -75,6 +75,7 @@ jobs:
           # Required
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           REMOTE_HOST: ${{ secrets.SFTP_HOST }}
+          REMOTE_USER: ${{ secrets.SFTP_USER }}
           SOURCE: './localhost:3000/*' # The '*' ensures only the contents are uploaded
           TARGET:  ${{ secrets.REMOTE_PATH }}
           ARGS: '-rlgoDzvc -i --delete'

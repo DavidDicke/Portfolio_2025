@@ -2,6 +2,5 @@ meta_product_name: "David Dicke"
 meta_title: "David Dicke - Junior Full Stack Developer"
 meta_description: "I love smoothness. With a background in architecture, design and marketing, I create web apps using Ruby on Rails, JavaScript, HTML, and CSS, currently working on my first React app."
 meta_image: "Social.jpg" # should exist in `app/assets/images/`
-meta_video: "Pitch_Video.mp4" # should exist in `app/assets/videos/`
 twitter_account: "@product_twitter_account" # required for Twitter Cards
 meta_url: "https://david-dicke.de" # required for Open Graph and Twitter Cards
