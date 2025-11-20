@@ -70,14 +70,15 @@ jobs:
         run: cat log/development.log
 
       - name: Sync files to Strato via SFTP
-        uses: easingthemes/ssh-deploy@main
+        uses: Dylan700/sftp-upload-action@latest
         with:
-          # Required
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          REMOTE_HOST: ${{ secrets.SFTP_HOST }}
-          REMOTE_USER: ${{ secrets.SFTP_USER }}
-          SOURCE: './localhost:3000/*' # The '*' ensures only the contents are uploaded
-          TARGET:  ${{ secrets.REMOTE_PATH }}
-          ARGS: '-rlgoDzvc -i --delete'
-          # Optional: This is the equivalent of 'dangerous-clean-slate'
-          EXCLUDE: "/assets/**/*.mp4"
+          server: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          key: ${{secrets.key}}
+          passphrase: ${{secrets.passphrase}}
+          port: 22
+          uploads: |
+            ./localhost:3000/* => ${{ secrets.REMOTE_PATH }}
+          ignore: |
+            /assets/**/*.mp4
+          delete: 'true'
