@@ -74,8 +74,7 @@ jobs:
         with:
           server: ${{ secrets.SFTP_HOST }}
           username: ${{ secrets.SFTP_USER }}
-          key: ${{secrets.key}}
-          passphrase: ${{secrets.passphrase}}
+          passphrase: ${{secrets.SFTP_PASSWORD}}
           port: 22
           uploads: |
             ./localhost:3000/* => ${{ secrets.REMOTE_PATH }}
