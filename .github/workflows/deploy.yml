@@ -78,7 +78,7 @@ jobs:
           password: ${{secrets.SFTP_PASSWORD}}
           port: 22
           uploads: |
-            ./localhost:3000/* => ${{ secrets.REMOTE_PATH }}
+            ./127.0.0.1:3000/* => ${{ secrets.REMOTE_PATH }}
           ignore: |
             /assets/**/*.mp4
           delete: 'true'
