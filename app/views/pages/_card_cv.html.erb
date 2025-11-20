@@ -24,7 +24,7 @@
             <h6><%= fieldKey.to_s.titleize %></h6>
             <% fieldValue[:stations].each do |station| %>
               <p class="station-title"><strong><%= "#{station[:degree]} at " if station[:degree] %><%= station[:organisation] %></strong></p>
-              <p><%= station[:start_date].strftime(my_strftime) %> - <%= station[:end_date].strftime(my_strftime) %></p>
+              <p><%= station[:start_date].strftime(my_strftime) %> - <%= station[:end_date] ? station[:end_date].strftime(my_strftime) : "today" %></p>
             <% end %>
         </div>
       </div>
