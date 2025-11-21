@@ -70,6 +70,15 @@ jobs:
       # This step will run and print the contents of the development log.
         run: cat log/development.log
 
+      - name: Clean remote (keep assets/*.mp4)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SFTP_HOST }}
+          username: ${{ secrets.SFTP_USER }}
+          password: ${{secrets.SFTP_PASSWORD}}
+          script: |
+            find david-dicke/Portfolio/ -mindepth 1 ! -name 'assets/*.mp4' -exec rm -rf {} +
+
       - name: Sync files to Strato via SFTP
         uses: Dylan700/sftp-upload-action@latest
         with:
@@ -79,6 +88,3 @@ jobs:
           port: 22
           uploads: |
             ./Portfolio => ${{ secrets.REMOTE_PATH }}
-          ignore: |
-            /assets/**/*.mp4
-          delete: 'true'
