@@ -77,7 +77,7 @@ jobs:
           username: ${{ secrets.SFTP_USER }}
           password: ${{secrets.SFTP_PASSWORD}}
           script: |
-            find david-dicke/Portfolio/ -mindepth 1 ! -path 'videos/*' -exec rm -rf {} +
+            find david-dicke/Portfolio/ -mindepth 1 ! -path 'videos' ! -path 'videos/*' -exec rm -rf {} +
 
       - name: Sync files to Strato via SFTP
         uses: Dylan700/sftp-upload-action@latest
