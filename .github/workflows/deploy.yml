@@ -70,7 +70,7 @@ jobs:
       # This step will run and print the contents of the development log.
         run: cat log/development.log
 
-      - name: Clean remote (keep my_folder/keep_this)
+      - name: Clean remote (keep assets/*.mp4)
         uses: appleboy/ssh-action@v1.0.3
         with:
           host: ${{ secrets.SFTP_HOST }}
